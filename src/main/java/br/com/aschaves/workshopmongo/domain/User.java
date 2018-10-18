@@ -2,6 +2,11 @@ package br.com.aschaves.workshopmongo.domain;
 
 import java.io.Serializable;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "user") // pode ser utilizado apenas a notação: @Document
+
 public class User implements Serializable {
 	/**
 	 * Serializable - Padrão Java; utilizado para permitir que os objetos sejam
@@ -10,6 +15,7 @@ public class User implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
+	@Id // Utilizar esta notação em cima do atributo onde for a chave
 	private String id;
 	private String name;
 	private String email;
